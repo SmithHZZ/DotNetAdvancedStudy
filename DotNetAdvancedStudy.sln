@@ -53,6 +53,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-UnitTestWebService", "19
 		{96C97A99-83B0-4450-AFDF-2E75CCA8CDF5} = {96C97A99-83B0-4450-AFDF-2E75CCA8CDF5}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-soa-wcf", "19-soa-wcf\19-soa-wcf.csproj", "{A4D922DD-43FC-45A7-96AA-7A396D425DBA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{96C97A99-83B0-4450-AFDF-2E75CCA8CDF5} = {96C97A99-83B0-4450-AFDF-2E75CCA8CDF5}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-soa-wcf-console", "19-soa-wcf-console\19-soa-wcf-console.csproj", "{FBB232E9-77D7-4583-9703-A72D0E9839F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +154,14 @@ Global
 		{963EE05A-0595-45DE-AEFE-966F21F05C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{963EE05A-0595-45DE-AEFE-966F21F05C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{963EE05A-0595-45DE-AEFE-966F21F05C28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D922DD-43FC-45A7-96AA-7A396D425DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D922DD-43FC-45A7-96AA-7A396D425DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D922DD-43FC-45A7-96AA-7A396D425DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D922DD-43FC-45A7-96AA-7A396D425DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBB232E9-77D7-4583-9703-A72D0E9839F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBB232E9-77D7-4583-9703-A72D0E9839F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBB232E9-77D7-4583-9703-A72D0E9839F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBB232E9-77D7-4583-9703-A72D0E9839F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,7 +10,9 @@ namespace _19_soa
     {
         public static void Main(string[] args)
         {
-            SOAWebServiceTest.Test01();
+            //SOAWebServiceTest.Test01();
+
+            WCFTest.Test01();
 
             Console.ReadKey();
         }

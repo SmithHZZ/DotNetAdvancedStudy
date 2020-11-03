@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -45,6 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\WCFTest01\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\WebServiceTest01\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -53,9 +61,23 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SOAWebServiceTest.cs" />
+    <Compile Include="WCFTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\WCFTest01\ServiceTest01.wsdl" />
+    <None Include="Connected Services\WCFTest01\ServiceTest01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFTest01\ServiceTest011.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFTest01\ServiceTest012.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WCFTest01\_19_soa.WCFTest01.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\WebServiceTest01\WebServiceTest01.wsdl" />
     <None Include="Connected Services\WebServiceTest01\_19_soa.WebServiceTest01.GetUserByIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -63,11 +85,13 @@
     <None Include="Connected Services\WebServiceTest01\_19_soa.WebServiceTest01.HelloWorldResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WCFTest01\" />
     <WCFMetadataStorage Include="Connected Services\WebServiceTest01\" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +105,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\WebServiceTest01\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCFTest01\ServiceTest01.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCFTest01\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCFTest01\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WCFTest01\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
