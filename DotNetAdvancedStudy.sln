@@ -60,6 +60,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-soa-wcf", "19-soa-wcf\19
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-soa-wcf-console", "19-soa-wcf-console\19-soa-wcf-console.csproj", "{FBB232E9-77D7-4583-9703-A72D0E9839F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-soa-webapi", "19-soa-webapi\19-soa-webapi.csproj", "{0763AE59-6CB5-4F59-AC97-9AF37A749332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-webapi", "19-webapi\19-webapi.csproj", "{B9A77828-C63B-4650-BE18-BDCE5E2B5F44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -162,6 +166,14 @@ Global
 		{FBB232E9-77D7-4583-9703-A72D0E9839F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBB232E9-77D7-4583-9703-A72D0E9839F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBB232E9-77D7-4583-9703-A72D0E9839F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0763AE59-6CB5-4F59-AC97-9AF37A749332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0763AE59-6CB5-4F59-AC97-9AF37A749332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0763AE59-6CB5-4F59-AC97-9AF37A749332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0763AE59-6CB5-4F59-AC97-9AF37A749332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A77828-C63B-4650-BE18-BDCE5E2B5F44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A77828-C63B-4650-BE18-BDCE5E2B5F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A77828-C63B-4650-BE18-BDCE5E2B5F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A77828-C63B-4650-BE18-BDCE5E2B5F44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
