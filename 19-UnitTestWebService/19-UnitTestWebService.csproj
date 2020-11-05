@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestWCF.cs" />
+    <Compile Include="UnitTestWebApi.cs" />
     <Compile Include="UnitTestWebService.cs" />
   </ItemGroup>
   <ItemGroup>
