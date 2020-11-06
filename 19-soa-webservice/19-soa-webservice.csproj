@@ -148,6 +148,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\ContainerFactory.cs" />
     <Compile Include="Utility\CustomBasicAuthorizeAttribute.cs" />
+    <Compile Include="Utility\CustomExceptionFilterAttribute.cs" />
+    <Compile Include="Utility\CustomExceptionHandler.cs" />
     <Compile Include="Utility\UnityDependencyResolver.cs" />
     <Compile Include="WCF\IServiceTest01.cs" />
     <Compile Include="WCF\ServiceTest01.svc.cs">

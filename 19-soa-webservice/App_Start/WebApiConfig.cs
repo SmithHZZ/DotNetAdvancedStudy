@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
 
 namespace _19_soa_webservice
 {
@@ -10,13 +11,23 @@ namespace _19_soa_webservice
     {
         public static void Register(HttpConfiguration config)
         {
+            //替换全局异常处理
+            config.Services.Replace(typeof(IExceptionHandler), new CustomExceptionHandler());
+
             // Web API 配置和服务
 
             config.DependencyResolver = new UnityDependencyResolver(ContainerFactory.BuildContainer());
 
             // Web API 路由
-            // 特性路由
-            config.MapHttpAttributeRoutes();
+
+
+            //全局注册
+            //config.Filters.Add(new CustomExceptionFilterAttribute());
+            //config.Filters.Add(new CustomBasicAuthorizeAttribute());
+
+            
+           
+                
 
             // 路由配置
             config.Routes.MapHttpRoute(
@@ -24,6 +35,9 @@ namespace _19_soa_webservice
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            // 特性路由
+            config.MapHttpAttributeRoutes();
         }
     }
 }

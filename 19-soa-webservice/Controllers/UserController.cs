@@ -37,11 +37,30 @@ namespace _19_soa_webservice.Controllers
             return user.ToString();
         }
 
+        //[HttpGet]
+        //[CustomBasicAuthorize]
+        //public string GetUserInfo()
+        //{
+        //    return JsonConvert.SerializeObject(new User() { Id = 1 });
+        //}
+
+        /// <summary>
+        /// 异常处理
+        /// 
+        /// 
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        [CustomBasicAuthorize]
-        public string GetUserInf()
+        //[CustomExceptionFilter]
+        public string GetExceptionHandle()
         {
-            return JsonConvert.SerializeObject(new User() { Id = 1 });
+            Random random = new Random();
+            if(random.Next()%2 == 0)
+            {
+                return JsonConvert.SerializeObject(new User() { Id = 1 });
+            }
+            throw new Exception("出问题了！");
         }
 
     }
