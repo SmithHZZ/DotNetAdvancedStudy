@@ -64,6 +64,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-soa-webapi", "19-soa-web
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-webapi", "19-webapi\19-webapi.csproj", "{B9A77828-C63B-4650-BE18-BDCE5E2B5F44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20-database-index", "20-database-index\20-database-index.csproj", "{E01733ED-E38E-42C2-88ED-12EC021A1AB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -174,6 +176,10 @@ Global
 		{B9A77828-C63B-4650-BE18-BDCE5E2B5F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9A77828-C63B-4650-BE18-BDCE5E2B5F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9A77828-C63B-4650-BE18-BDCE5E2B5F44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E01733ED-E38E-42C2-88ED-12EC021A1AB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E01733ED-E38E-42C2-88ED-12EC021A1AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E01733ED-E38E-42C2-88ED-12EC021A1AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E01733ED-E38E-42C2-88ED-12EC021A1AB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
