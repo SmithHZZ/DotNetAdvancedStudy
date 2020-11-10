@@ -10,7 +10,7 @@ namespace _21_lucene
     {
         public static void Main(string[] args)
         {
-
+            LuceneTest.Test01();
 
 
             Console.ReadKey();
