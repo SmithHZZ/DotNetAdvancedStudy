@@ -80,6 +80,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "22-EntityFramework-ModelFir
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23-Quartz", "23-Quartz\23-Quartz.csproj", "{E2D17317-E9AA-45CD-A3CE-F055CD8CFD22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24-mvc5", "24-mvc5\24-mvc5.csproj", "{74923D09-91F1-425E-9CEB-68B113BA5D61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24-asp.net-mvc5", "24-asp.net-mvc5\24-asp.net-mvc5.csproj", "{60E80263-A5D0-44F3-BC2D-6A149210D1F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -222,6 +226,14 @@ Global
 		{E2D17317-E9AA-45CD-A3CE-F055CD8CFD22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2D17317-E9AA-45CD-A3CE-F055CD8CFD22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2D17317-E9AA-45CD-A3CE-F055CD8CFD22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74923D09-91F1-425E-9CEB-68B113BA5D61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74923D09-91F1-425E-9CEB-68B113BA5D61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74923D09-91F1-425E-9CEB-68B113BA5D61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74923D09-91F1-425E-9CEB-68B113BA5D61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60E80263-A5D0-44F3-BC2D-6A149210D1F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E80263-A5D0-44F3-BC2D-6A149210D1F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E80263-A5D0-44F3-BC2D-6A149210D1F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E80263-A5D0-44F3-BC2D-6A149210D1F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
