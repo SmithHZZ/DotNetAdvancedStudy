@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -12,6 +12,9 @@
 </head>
 <body>
     <div> 
+        @{Html.RenderPartial("PartialPage", "这里是PartialPage111");}
+
+        @{ Html.RenderAction("ViewBagTest", "Data"); }
     </div>
 </body>
 </html>

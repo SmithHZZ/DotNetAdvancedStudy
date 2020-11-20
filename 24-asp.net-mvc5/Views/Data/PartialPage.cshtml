@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -8,11 +8,11 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>ModelTest</title>
+    <title>PartialPage</title>
 </head>
 <body>
-    <div>
-        @Model.Id
+    <div> 
+        这是PartialPage。@DateTime.Now.ToString()
     </div>
 </body>
 </html>
