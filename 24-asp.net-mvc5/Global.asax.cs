@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _24_asp.net_mvc5.Utility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,6 +21,8 @@ namespace _24_asp.net_mvc5
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             //合并压缩打包工具
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            ControllerBuilder.Current.SetControllerFactory(new CustomControllerFactory());
         }
     }
 }

@@ -52,6 +52,8 @@ namespace _24_asp.net_mvc5
                 url: "{controller}/{action}/{id}",
                 //默认值
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                //如果使用插件式开发，要加上这个配置
+                //,namespaces: new string[] { "项目中的命名空间","项目外的插件命名空间" }
             );
         }
     }
