@@ -1,0 +1,50 @@
+﻿
+@using PagedList.Mvc;
+@using _24_asp.net_mvc5.Models;
+
+@{
+    PagedList.IPagedList<Student> myPageList = (PagedList.IPagedList<Student>)ViewBag.MyPageList;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PageList</title>
+</head>
+<body>
+    <div>
+        <table border="1">
+            <tr>
+                <th width="50px">
+                    Id
+                </th>
+                <th width="150px">
+                    Name
+                </th>
+                <th width="50px">
+                    Age
+                </th>
+            </tr>
+            @foreach (var item in myPageList)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                </tr>
+            }
+        </table>
+        每页 @myPageList.PageSize 条记录，共 @myPageList.PageCount 页，当前第 @myPageList.PageNumber 页
+        @Html.PagedListPager(myPageList, page => Url.Action("PageList", new { page }))
+    </div>
+</body>
+</html>

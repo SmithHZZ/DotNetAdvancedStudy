@@ -10,26 +10,40 @@ using Unity;
 
 namespace _24_asp.net_mvc5.Utility
 {
+
+    /// <summary>
+    /// 进行双检锁单例模式改造
+    /// </summary>
     public class ContainerFactory
     {
 
+        private static IUnityContainer _Container = null;
+        private readonly static object ContainerFactoryLock = new object();
+
         public static IUnityContainer GetUnityContainer()
         {
-            IUnityContainer container = null;
+            if(_Container == null)
+            {
+                lock(ContainerFactoryLock)
+                {
+                    if(_Container == null)
+                    {
+                        ExeConfigurationFileMap fileMap = new ExeConfigurationFileMap();
 
-            ExeConfigurationFileMap fileMap = new ExeConfigurationFileMap();
+                        fileMap.ExeConfigFilename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CfgFiles\\Unity\\Unity.Config");
 
-            fileMap.ExeConfigFilename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CfgFiles\\Unity\\Unity.Config");
+                        Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
 
-            Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
+                        UnityConfigurationSection section = (UnityConfigurationSection)configuration.GetSection(UnityConfigurationSection.SectionName);
 
-            UnityConfigurationSection section = (UnityConfigurationSection)configuration.GetSection(UnityConfigurationSection.SectionName);
+                        _Container = new UnityContainer();
 
-            container = new UnityContainer();
+                        section.Configure(_Container, "container");
+                    }
+                }
+            }
 
-            section.Configure(container, "container");
-
-            return container;
+            return _Container;
 
         }
     }
