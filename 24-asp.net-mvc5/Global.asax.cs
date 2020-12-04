@@ -23,6 +23,10 @@ namespace _24_asp.net_mvc5
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             ControllerBuilder.Current.SetControllerFactory(new CustomControllerFactory());
+
+            //log4net.Config.XmlConfigurator.Configure();
+
+            log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo(System.Web.HttpContext.Current.Server.MapPath("web.config")));
         }
     }
 }

@@ -74,8 +74,53 @@ namespace _24_mvc5
     /// 
     /// IOC和MVC结合，工厂的创建和business初始化
     /// 
+    /// log4net配置和使用
+    /// 
+    /// 自定义AuthorizeAttribute的创建和使用
+    /// 
+    /// 新建CustomAuthorizeAttribute 继承 AuthorizeAttribute
+    /// 
+    /// 重写其中的OnAuthorize方法，进行认证操作，
+    ///     public class CustomAuthorizeAttribute : AuthorizeAttribute
+    ///    {
+
+    ///        public override void OnAuthorization(AuthorizationContext filterContext)
+    ///    {
+
+    ///        var httpContext = filterContext.HttpContext;
+
+    ///        if (httpContext.Session["CurrentUser"] == null || !(httpContext.Session["CurrentUser"] is CurrentUser))
+    ///        {
+    ///            LogHelper.WriteLog("接口" + httpContext.Request.Url.AbsoluteUri + "访问被拦截");
+    ///            filterContext.Result = new RedirectResult("Auth/Login");
+    ///            //断路器：指定了Result，那么请求就短路了，不会执行action
+
+    ///        }
+    ///        else
+    ///        {
+    ///            CurrentUser user = (CurrentUser)httpContext.Session["CurrentUser"];
+    ///            LogHelper.WriteLog("用户" + user + "访问接口" + httpContext.Request.Url.AbsoluteUri + "成功！");
+    ///        }
+
+    ///        //base.OnAuthorization(filterContext);
+    ///    }
+    ///}
+    ///
+    /// 最后，在需要进行身份认证的接口上进行特性的标注
+    /// 或者在控制器上使用特性，那么该控制器中的所有方法进行访问时都需要认证
+    /// 全局注册，全部请求都生效
+    /// 
+    /// AllowAnonymous匿名，单独加特性时没用的
+    /// 其实需要验证时支持
+    /// 
+    /// 不光可以判断是否登录，还可以进行权限验证
+    /// 
+    /// Filter生效机制
+    /// 
+    /// 
+    /// 
     /// </summary>
-    public class Mvc5Test
+public class Mvc5Test
     {
 
         /// <summary>
