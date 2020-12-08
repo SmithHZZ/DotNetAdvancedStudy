@@ -9,7 +9,7 @@ namespace _24_asp.net_mvc5
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
-            filters.Add(new CustomAuthorizeAttribute());
+            //filters.Add(new CustomAuthorizeAttribute());
         }
     }
 }

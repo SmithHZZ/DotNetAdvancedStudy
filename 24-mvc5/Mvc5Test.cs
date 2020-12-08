@@ -118,9 +118,47 @@ namespace _24_mvc5
     /// Filter生效机制
     /// 
     /// 
+    /// 统一的异常处理
+    /// 
+    /// 自定义异常处理特性继承 HandleErrorAttribute
+    /// 
+    /// 还是三种方式
+    /// 1、在Action上使用特性
+    /// 2、在Controller上使用特性
+    /// 3、在FilterConfig中使用全局配置
+    /// 
+    /// 还有部分抓不到的异常，需要进行进一步处理
+    /// 在Global中实现以下方法，进行异常处理
+    /// protected void Application_Error(object sender, EventArgs e)
+    /// 
+    /// 
+    /// IActionFilter
+    /// IResultFilter
+    /// 
+    /// 在Action、Result执行的前后进行的操作
+    /// 
+    /// 1、创建自定义的ActionFilterAttribute 继承 ActionFilterAttribute
+    /// 2、重写其中的OnActionExecuting、OnActionExecuted、OnResultExecuting、OnResultExecuted方法
+    /// 3、三种生效方式和作用范围，同上
+    /// 
+    /// 生效顺序问题
+    ///     不同位置注册生效顺序-全局->控制器->Action
+    ///     同一位置按照先后顺序生效
+    ///     设置后是按照从大到小执行
+    ///     俄罗斯套娃
+    /// 
+    /// 日志、参数检测、缓存、重写试图、压缩、防盗链、统计访问量
+    /// 
+    /// 不同客户端区别处理、限流
+    /// 
+    /// 虽然很丰富，但是只能是以Action为单位
+    /// 
+    /// Action中内部调用别的类库，加操作，做不到
+    /// 
+    /// 需要使用IOC+AOP扩展
     /// 
     /// </summary>
-public class Mvc5Test
+    public class Mvc5Test
     {
 
         /// <summary>

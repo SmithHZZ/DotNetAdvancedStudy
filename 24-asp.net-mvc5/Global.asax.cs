@@ -28,5 +28,18 @@ namespace _24_asp.net_mvc5
 
             log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo(System.Web.HttpContext.Current.Server.MapPath("web.config")));
         }
+
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception exception = Server.GetLastError();
+
+            LogHelper.WriteLog("发生异常", exception);
+
+            Response.ContentType = "text/html;charset=UTF-8";
+
+            Response.Write("系统错误！！");
+
+            Server.ClearError();
+        }
     }
 }
