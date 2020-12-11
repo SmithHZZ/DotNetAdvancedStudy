@@ -10,7 +10,13 @@ namespace _18_redis
     {
         public static void Main(string[] args)
         {
+            //RedisTest.Test01();
 
+            //RedisTest.Test02();
+
+            RedisTest.Test03();
+
+            Console.ReadKey();
         }
     }
 }
