@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace _18_redis
@@ -76,6 +77,34 @@ namespace _18_redis
     ///     
     /// set 无序 去重
     /// 
+    /// zset 有序集合
+    /// 
+    /// list
+    ///     方便添加
+    ///     
+    ///     每次写入数据的时把标题_Id写入List，查询最近的200个
+    ///     用户刷新页面就不需要去数据库，直接redis
+    ///     
+    ///     第一次的时候可以不管分页只拿，最新数据
+    ///     
+    ///     存数据的时候可以仅保存Id+表名称
+    ///     
+    ///     主要是数据库量大，变化快的分页数据查询
+    ///     
+    ///     80%的访问集中在20%的数据
+    ///     
+    ///     list里面只保存大概的量就够用了
+    ///     
+    ///     可以重复
+    ///     队列，生产者消费者，一个数据只有一个消费对
+    ///     
+    ///     发布订阅，观察者弄湿：微信订阅号 群聊天 数据同步
+    ///     MSMQ RabbitMQ ZeroMQ
+    ///     
+    ///     项目中使用场景 与mq的使用场景相同：
+    ///         异步 解耦 削峰
+    /// 
+    ///     
     /// 
     /// </summary>
     public class RedisTest
@@ -202,6 +231,84 @@ namespace _18_redis
                 
             }
 
+        }
+
+
+        /// <summary>
+        /// 一个key
+        /// 对应一组value
+        /// 
+        /// 每个value带一个排序的分数
+        /// 
+        /// 使用场景：实时排行榜
+        /// 刷礼物
+        /// 维度很多，平台/房间/主播/日/周/月/年
+        /// A对B刷个礼物，影响很多
+        /// 
+        /// 刷礼物只影响流水，不影响排行，凌晨跑任务更新
+        /// </summary>
+        public static void Test04()
+        {
+            using (RedisZSetService zSetService = new RedisZSetService())
+            {
+                zSetService.Add("hellozset", "world");
+                zSetService.Add("hellozset", "hello");
+                zSetService.Add("hellozset", "99");
+                zSetService.Add("hellozset", "59");
+                zSetService.Add("hellozset", "101");
+
+                //正序
+                List<string> res1 = zSetService.GetAll("hellozset");
+                //倒序
+                List<string> res2 = zSetService.GetAllDesc("hellozset");
+
+                //设置数据和分数
+                zSetService.AddItemToSortedSet("hellozset", "test", 1);
+
+                zSetService.AddRangeToSortedSet("hellozset", new List<string>() { "1", "2", "3" }, 2);
+            }
+        }
+
+        /// <summary>
+        /// list的基本操作
+        /// 
+        /// 
+        /// </summary>
+        public static void Test05()
+        {
+            using (RedisListService listService = new RedisListService())
+            {
+                listService.Add("hellolist", "hello");
+                listService.Add("hellolist", "world");
+                listService.Add("hellolist", "jack");
+                listService.Add("hellolist", "tom");
+
+                List<string> list = listService.Get("hellolist");
+
+                list.ForEach(s =>
+                {
+                    Console.WriteLine(s);
+                });
+
+                listService.LPush("hellolist", "1");
+                listService.RPush("hellolist", "2");
+
+                //从list获取方法，阻塞式的
+                listService.BlockingPopItemFromList("hellolist", TimeSpan.FromHours(3));
+
+                Task.Run(() =>
+                {
+                    //
+                    new RedisListService().Subscribe("hellops", (c, m, sub) =>
+                    {
+                        Console.WriteLine($"注册{c}:{m}");
+                    });
+                });
+
+                Thread.Sleep(1000);
+
+                listService.Publish("hellops", "1234");
+            }
         }
     }
 }

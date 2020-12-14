@@ -14,7 +14,11 @@ namespace _18_redis
 
             //RedisTest.Test02();
 
-            RedisTest.Test03();
+            //RedisTest.Test03();
+
+            //RedisTest.Test04();
+
+            RedisTest.Test05();
 
             Console.ReadKey();
         }
