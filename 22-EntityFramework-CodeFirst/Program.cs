@@ -10,6 +10,13 @@ namespace _22_EntityFramework_CodeFirst
     {
         public static void Main(string[] args)
         {
+
+            //EntityFrameworkCodeFirstTest.Test01();
+            //EntityFrameworkCodeFirstTest.Test02();
+            //EntityFrameworkCodeFirstTest.Test03();
+            EntityFrameworkCodeFirstTest.Test04();
+
+            Console.ReadKey();
         }
     }
 }
