@@ -204,5 +204,57 @@ namespace _22_EntityFramework_CodeFirst
                 }
             }
         }
+
+        /// <summary>
+        /// 多个数据操作
+        /// 一次SaveChanges，开始事务保存
+        /// 
+        /// 任何一个失败，事务回滚
+        /// 
+        /// 整个进程只有一个context实例？不可以
+        /// 
+        /// 多线能不能是一个实例？ 一般不行，除非自己明确是想要的效果
+        /// 
+        /// 每个数据操作都去实例化一个context实例？也不好
+        /// 1、内存消耗大，没法缓存
+        /// 2、多context join不行，因为上下文环境不一样，除非把数据都查到内存，再去linq
+        /// 3、多context的事务也不好控制
+        /// 
+        /// context使用建议
+        /// 
+        /// 
+        /// 延迟查询
+        /// 
+        /// </summary>
+        public static void Test05()
+        {
+            using (UserCenter userCenter = new UserCenter())
+            {
+
+                userCenter.Database.Log += m => Console.WriteLine($"sql:{m}");
+
+                //延迟查询
+                {
+                    //这时候没去数据库查询
+                    var temp = from a in userCenter.Base_Area
+                               where a.Id > 109000
+                               select a;
+
+                    temp = temp.Where(a => a.Full_Name.Contains("省"));
+
+                    //可以添加多个条件，叠加多次查询，一次提交
+
+                    //这时候才去查询
+                    foreach (Base_Area a in temp)
+                    {
+                        Console.WriteLine($"Id:{a.Id},Name:{a.Full_Name}");
+                    }
+                    //用完之后才关闭连接
+                }
+
+            }
+
+
+        }
     }
 }

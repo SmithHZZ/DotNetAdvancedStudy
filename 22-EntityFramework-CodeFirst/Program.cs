@@ -14,7 +14,8 @@ namespace _22_EntityFramework_CodeFirst
             //EntityFrameworkCodeFirstTest.Test01();
             //EntityFrameworkCodeFirstTest.Test02();
             //EntityFrameworkCodeFirstTest.Test03();
-            EntityFrameworkCodeFirstTest.Test04();
+            //EntityFrameworkCodeFirstTest.Test04();
+            EntityFrameworkCodeFirstTest.Test05();
 
             Console.ReadKey();
         }
